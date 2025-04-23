@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Institute for Para-disciplinary Studies παράλογος (학제가연구소 파라로고스)</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+    
+    :root {
+      --primary: #2d3748;
+      --secondary: #718096;
+      --accent: #6c63ff;
+      --light: #f7fafc;
+      --dark: #1a202c;
+      --muted: #94a3b8;
+      --success: #48bb78;
+      --danger: #e53e3e;
+      --border: #d1d5db;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--dark);
+      line-height: 1.6;
+      background-color: #fafafa;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+    
+    header {
+      background-color: white;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.25rem 0;
+    }
+    
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+    
+    .logo span {
+      color: var(--accent);
+    }
+    
+    .nav-links {
+      display: flex;
+      list-style: none;
+    }
+    
+    .nav-links li {
+      margin-left: 2rem;
+    }
+    
+    .nav-links a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s, transform 0.3s;
+    }
+    
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+    
+    .hero {
+      background-color: var(--primary);
+      color: white;
+      padding: 5rem 0;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .hero-pattern {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23718096' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      opacity: 0.5;
+    }
+    
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 700px;
+    }
+    
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+    
+    .hero p {
+      font-size: 1.25rem;
+      margin-bottom: 2rem;
+      opacity: 0.9;
+    }
+    
+    .btn {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      background-color: var(--accent);
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
+      font-weight: 500;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+    
+    .btn:hover {
+      background-color: #4c51bf;
+    }
+    
+    .btn-secondary {
+      background-color: transparent;
+      border: 1px solid white;
+      margin-left: 1rem;
+    }
+    
+    .btn-secondary:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+    
+    section {
+      padding: 5rem 0;
+    }
+    
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+      color: var(--primary);
+      position: relative;
+    }
+    
+    .section-title::after, .section-title:before {
+      content: "";
+      display: block;
+      width: 50px;
+      height: 3px;
+      background-color: var(--accent);
+      margin-top: 0.5rem;
+    }
+    
+    .section-subtitle {
+      color: var(--secondary);
+      font-size: 1.25rem;
+      margin-bottom: 3rem;
+      max-width: 700px;
+    }
+    
+    .palimpsest-text {
+      background-color: white;
+      border-radius: 8px;
+      padding: 2rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+      margin-bottom: 2rem;
+    }
+    
+    .palimpsest-text h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: var(--primary);
+    }
+    
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+    
+    .card {
+      background-color: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+    
+    .card-body {
+      padding: 1.5rem;
+    }
+    
+    .card-title {
+      font-size: 1.25rem;
+      margin-bottom: 0.75rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+    
+    .card-text {
+      color: var(--secondary);
+      margin-bottom: 1.5rem;
+    }
+    
+    .card-link {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+    }
+    
+    .card-link i {
+      margin-left: 0.5rem;
+      font-size: 0.875rem;
+    }
+    
+    .card-link:hover {
+      text-decoration: underline;
+    }
+    
+    .list-group {
+      list-style: none;
+      margin-bottom: 2rem;
+    }
+    
+    .list-group-item {
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    
+    .list-group-item:last-child {
+      border-bottom: none;
+    }
+    
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 2rem;
+    }
+    
+    th, td {
+      padding: 0.75rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+    
+    th {
+      font-weight: 700;
+      color: var(--primary);
+      background-color: #f7fafc;
+    }
+    
+    tr:hover {
+      background-color: #f7fafc;
+    }
+    
+    .redacted {
+      background-color: #cbd5e0;
+      color: transparent;
+      user-select: none;
+      border-radius: 2px;
+      display: inline-block;
+      line-height: 1;
+      padding: 2px 5px;
+    }
+    
+    footer {
+      background-color: var(--primary);
+      color: white;
+      padding: 3rem 0;
+    }
+    
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+    
+    .footer-title {
+      font-size: 1.25rem;
+      margin-bottom: 1.5rem;
+      font-weight: 700;
+    }
+    
+    .footer-links {
+      list-style: none;
+    }
+    
+    .footer-links li {
+      margin-bottom: 0.75rem;
+    }
+    
+    .footer-links a {
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.3s, transform 0.3s;
+    }
+    
+    .footer-links a:hover {
+      color: white;
+    }
+    
+    .social-links {
+      display: flex;
+      list-style: none;
+      margin-top: 1.5rem;
+    }
+    
+    .social-links li {
+      margin-right: 1rem;
+    }
+    
+    .social-links a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      color: white;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+    
+    .social-links a:hover {
+      background-color: var(--accent);
+    }
+    
+    .copyright {
+      text-align: center;
+      padding-top: 2rem;
+      margin-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      color: var(--muted);
+      font-size: 0.875rem;
+    }
+    
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+      
+      .hero p {
+        font-size: 1rem;
+      }
+      
+      .section-title {
+        font-size: 2rem;
+      }
+      
+      .btn {
+        display: block;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 1rem;
+      }
+      
+      .btn-secondary {
+        margin-left: 0;
+      }
+      
+      .nav-links {
+        display: none;
+      }
+    }
+    
+    .hidden-note {
+      position: relative;
+    }
+    
+    .hidden-note::after {
+      content: "?";
+      position: absolute;
+      top: 0;
+      right: -15px;
+      color: var(--muted);
+      font-size: 0.75rem;
+      cursor: help;
+    }
+    
+    .hidden-note:hover::before {
+      content: attr(data-note);
+      position: absolute;
+      top: 20px;
+      right: -15px;
+      width: 200px;
+      padding: 0.75rem;
+      background-color: var(--dark);
+      color: white;
+      font-size: 0.75rem;
+      border-radius: 4px;
+      z-index: 10;
+    }
+    
+    .timeline {
+      position: relative;
+      margin: 3rem 0;
+    }
+    
+    .timeline::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 2px;
+      background-color: var(--border);
+    }
+    
+    .timeline-item {
+      position: relative;
+      padding-left: 2rem;
+      margin-bottom: 2rem;
+    }
+    
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -4px;
+      width: 10px;
+      height: 10px;
+      background-color: var(--accent);
+      border-radius: 50%;
+    }
+    
+    .timeline-date {
+      font-size: 0.875rem;
+      color: var(--secondary);
+      margin-bottom: 0.5rem;
+    }
+    
+    .timeline-title {
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    
+    .timeline-text {
+      color: var(--secondary);
+    }
+    
+    .footnote {
+      font-size: 0.875rem;
+      color: var(--secondary);
+      margin-top: 2rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+    }
+    
+    .footnote-mark {
+      vertical-align: super;
+      font-size: 0.75rem;
+      color: var(--accent);
+    }
+
+    .premise-list p {
+      margin-top: 0.5em;
+      margin-left: 1.5em;
+      text-indent: 1.5em;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav class="navbar">
+        <div class="logo"><img src="/img/logo.png" alt="학제가연구소 파라로고스 Logo" 
+                            style="height: 40px; width: 40px; border-radius: 50%; vertical-align: middle; margin-right: 12px; object-fit: cover;"></div>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#members">Members</a></li>
+          <li><a href="#research">Research</a></li>
+          <li><a href="#programs">Programs</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  
+  <section class="hero">
+    <div class="hero-pattern"></div>
+    <div class="container">
+      <div class="hero-content">
+        <h1>학제가연구소 파라로고스(παράλογος)</h1>
+        <p>우리는 학제간(inter-disciplinary)이 아닌, 학제가(para-disciplinary) 연구를 수행합니다. 가는 주변부를 뜻하며, 제도 밖 연구 전반을 지원합니다.</p>
+        <a href="#about" class="btn">Learn More</a>
+        <a href="#programs" class="btn btn-secondary">Our Programs</a>
+      </div>
+    </div>
+  </section>
+  
+  <section id="about">
+    <div class="container">
+      <h2 class="section-title">About the Institute</h2>
+        <img src="/img/paralogos.png" alt="Institute Logo" 
+          style="display: block; margin: 0 auto 30px auto; width: 500px; height: auto;">
+        <h2>학제가연구소 파라로고스(Institute for Para-disciplinary Studies παράλογος)</h2>
+        <p>제도적 학문(discipline)의 규범성과 중심성에서 벗어나, 그 <strong>가장자리(學際가)</strong>에서 발생하는 비정형적 사유와 비제도적 지식 생산을 실험하는 연구공간이다.
+          우리는 학문 사이(inter-)의 통합을 지향하지 않는다. 대신, 학문 곁(para-), 혹은 학문 너머(beyond disciplines)에서 작동하는 사유를 탐색한다.
+          이곳에서 "para"는 곁에 있음이자 교란하는 움직임, 그리고 "paralogos(παράλογος)"는 이성의 경계를 넘나드는 사유의 가능성이다.</p>
+
+      <br />
+      
+      <div class="palimpsest-text">
+        <h3>Our Premise</h3>
+        <ul class="list-group premise-list">
+          <li class="list-group-item">
+            <strong>우리는 ‘학문’이 시작되는 경계에 주목한다.</strong>
+            <p>
+              ‘학제간(interdisciplinary)’이 기존 학문들의 통합을 전제로 한다면, ‘학제가(para-disciplinary)’는 그 학문들 <strong>바깥에서</strong>, 혹은 <strong>곁에서</strong>, <strong>이미-학문이기를 거부하거나 아직-학문이 되지 않은 사유</strong>를 실험한다. 우리는 이 ‘곁(para)’의 자리를 사유의 출발점으로 삼는다.
+            </p>
+          </li>
+          <li class="list-group-item">
+            <strong>우리는 제도적 정당화 대신 ‘패러로지(paralogy)’를 따른다.</strong>
+            <p>
+              Jean-François Lyotard가 말한 것처럼, 지식은 더 이상 하나의 통일된 메타서사나 효율성(performativity)에 의해 정당화되지 않는다.<br>
+              우리는 <strong>이성(logos)</strong>이 아닌 <strong>비이성(παράλογος, paralogos)</strong>의 자장에서, 정당화가 아닌 <strong>비동조, 실험, 교란</strong>을 통해 새로운 언어 게임을 생성한다.
+            </p>
+          </li>
+          <li class="list-group-item">
+            <strong>우리는 불완전성과 불일치의 상태를 긍정한다.</strong>
+            <p>
+              완결된 이론보다 <strong>열린 가능성</strong>, 정합성보다 <strong>균열</strong>, 중심보다 <strong>주변</strong>에서 의미를 찾는다.<br>
+              지식은 누적되는 것이 아니라, 때로 <strong>잊히고 무너질 때 새로운 형태로 발화</strong>된다.<br>
+              우리는 이 발화를 <strong>고의적 오류, 비정형적 조합, 위법한 인용</strong>의 방식으로 수행한다.
+            </p>
+          </li>
+          <li class="list-group-item">
+            <strong>우리는 다양한 ‘비-학문’을 학문적으로 다룬다.</strong>
+            <p>
+              패러문학(paraliterature), 패러심리학(parapsychology), 패러인류학(paranthropology), 패러종교연구(para-religious studies) 등, <strong>제도권 학문에서 배제되었거나 경계에 머무는 담론들</strong>은 이 연구소의 핵심 관심사이다.<br>
+              이는 단지 주제를 다르게 하는 것이 아니라, <strong>사유하는 방식 자체를 전복하는 일</strong>이다.
+            </p>
+          </li>
+          <li class="list-group-item">
+            <strong>우리는 ‘되지 않음’의 상태를 지속적으로 연기한다.</strong>
+            <p>
+              우리는 무엇이 되기를 주장하지 않는다. 오히려 <strong>되지 않음(becoming-not)</strong>의 상태에서, <strong>미끄러지고 틀어지고 흩어지는 사유</strong>를 추구한다.<br>
+              "학제가"는 곧 "학제의 가장자리"이다. 이곳은 <strong>진짜인 척하지 않는 연구소</strong>이다.
+            </p>
+          </li>
+        </ul>
+      
+        <p><em>학제가연구소 파라로고스 offers no conclusions—only the possibility that every question can be enacted.</em></p>
+        
+        <div class="footnote">
+          <span class="footnote-mark">1</span> The concept of "institutional intelligibility" is itself unintelligible, which is precisely the point.
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section id="members" style="background-color: #f7fafc;">
+    <div class="container">
+      <h2 class="section-title">Our Members</h2>
+      <p class="section-subtitle">각자가 원하는 연구를 수행하고 있습니다.</p>
+      
+      <div class="grid">
+        <div class="card">
+          <div class="card-body">
+            <h3 class="card-title">docteur Faustroll</h3>
+            <p class="card-text">Professor Emeritus from <a href="https://www.college-de-pataphysique.fr/" target="_blank">Collège de 'Pataphysique</a></p>
+            <p class="card-text">Specializing in pataphysical methodologies and the science of imaginary solutions.</p>
+            <a href="#" class="card-link">View Profile <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-body">
+            <h3 class="card-title"><span class="redacted">Redacted</span></h3>
+            <p class="card-text">Information unavailable due to complex temporal considerations.</p>
+            <p class="card-text">Current research remains classified under interdimensional protocols.</p>
+            <a href="#" class="card-link">Request Clearance <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+        
+<!--         <div class="card">
+          <div class="card-body">
+            <h3 class="card-title">Dr. <span class="redacted">█████</span></h3>
+            <p class="card-text">방문연구원(Visiting Scholar).</p>
+            <p class="card-text">Specializing in non-existent research methodologies.</p>
+            <a href="#" class="card-link">View Non-Profile <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div> -->
+
+        <div class="card">
+          <div class="card-body">
+            <h3 class="card-title">Kampanella, Kornelius</h3>
+            <p class="card-text">학제가연구원(Para-disciplinary Researcher).</p>
+            <p class="card-text">Para-disciplinary Studies 전공.</p>
+            <a href="#" class="card-link">View Profile <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-body">
+            <h3 class="card-title">성혼</h3>
+            <p class="card-text">학제가연구원(Para-disciplinary Researcher).</p>
+            <p class="card-text">Para-disciplinary Studies (Para-religious Studies, Paranthropology) 전공.</p>
+            <a href="#" class="card-link">View Profile <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-body">
+            <h3 class="card-title">천산</h3>
+            <p class="card-text">학제가연구원(Para-disciplinary Researcher).</p>
+            <p class="card-text">Jungian Studies, Western Esotericism 전공.</p>
+            <a href="#" class="card-link">View Profile <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section id="research">
+    <div class="container">
+      <h2 class="section-title">Research Activities</h2>
+      <p class="section-subtitle">The field itself is still under theoretical consideration.</p>
+      
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-date">Current</div>
+          <div class="timeline-title">Academic Journal</div>
+          <div class="timeline-text">Our institute publishes the academic journal "<i>Proceedings of the Institute for Para-disciplinary Studies</i>" which features cutting-edge research in the field.</div>
+        </div>
+        
+        <div class="timeline-item">
+          <div class="timeline-date">In Progress</div>
+          <div class="timeline-title">Book Publication</div>
+          <div class="timeline-text">Currently preparing to publish a book titled "<i>Modern Magico-Religious Practices and Their Meaning</i>" (working title).</div>
+        </div>
+        
+        <div class="timeline-item">
+          <div class="timeline-date">Recent</div>
+          <div class="timeline-title">Research Papers</div>
+          <div class="timeline-text">
+            Recently published in <i>Proceedings of the Institute for Para-disciplinary Studies</i>:
+            <ul class="list-group" style="margin-top: 1rem;">
+              <li class="list-group-item">
+                <a href="/pdf/Towards_an_Asemic_Palimpsest.pdf">Towards an Asemic Palimpsest: The Manifold Layers of Traced Oblivion</a>
+              </li>
+              <li class="list-group-item">
+                <a href=""/pdf/Palimpsestic_Ontology.pdf">Palimpsestic Ontology: Theoretical Foundations of Layered Reality</a>
+              </li>
+              <li class="list-group-item">
+                <a href="#">On Why Research Questions Are Actually Statements and Vice Versa</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section id="programs" style="background-color: #f7fafc;">
+    <div class="container">
+      <h2 class="section-title">Academic Programs</h2>
+      <p class="section-subtitle">Innovative educational pathways that challenge traditional academic boundaries.</p>
+      
+      <div class="grid">
+        <div class="card">
+          <div class="card-body">
+            <h3 class="card-title">Free-Associate Degree</h3>
+            <p class="card-text">This pioneering program empowers students to establish their own fields of study not formally recognized by conventional universities.</p>
+            <p class="card-text">By achieving specified outcomes in their self-designed majors, students can receive academic recognition for exploring uncharted intellectual territories.</p>
+            <a href="#" class="card-link">Learn More <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-body">
+            <h3 class="card-title">Dissociate Degree</h3>
+            <p class="card-text">This unique program celebrates the pataphysical tradition of creative disruption through academic mimicry.</p>
+            <p class="card-text">Students develop plausible yet deliberately unconventional theoretical frameworks, engaging in playful philosophy that challenges established systems of thought.</p>
+            <a href="#" class="card-link">Learn More <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+      
+      <div style="margin-top: 3rem;">
+        <h3 style="margin-bottom: 1.5rem;">Upcoming Programs</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Program</th>
+              <th>Status</th>
+              <th>Expected Launch</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="redacted">Information redacted</span></td>
+              <td>Coming Soon</td>
+              <td>TBD</td>
+            </tr>
+            <tr>
+              <td><span class="redacted">Information redacted</span></td>
+              <td>Coming Soon</td>
+              <td>TBD</td>
+            </tr>
+          </tbody>
+        </table>
+        
+        <div style="margin-top: 2rem; text-align: center;">
+          <a href="/pdf/diploma_example.pdf" class="btn">View Sample Diploma</a>
+          <p style="font-size: 0.875rem; color: var(--secondary); margin-top: 0.5rem;">(The diploma will appear blank to non-initiates)</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section id="contact">
+    <div class="container">
+      <h2 class="section-title">Contact Us</h2>
+      <p class="section-subtitle">Note: All correspondences may be answered before they are sent.</p>
+      
+      <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+        <div>
+          <h3 style="margin-bottom: 1.5rem; font-size: 1.5rem;">Get in Touch</h3>
+          <ul class="list-group">
+            <li class="list-group-item">
+              <strong>Email:</strong> <a href="mailto:palimpsestology@gmail.com">palimpsestology@gmail.com</a>
+            </li>
+            <li class="list-group-item">
+              <strong>Physical Location:</strong> Undetermined since the incident of '93
+            </li>
+          </ul>
+        </div>
+        
+        <div>
+          <h3 style="margin-bottom: 1.5rem; font-size: 1.5rem;">Visit Us</h3>
+          <p>Our institute exists in a state of theoretical permanence and practical impermanence.</p>
+          <p style="margin-top: 1rem;">For those who wish to find us: we are precisely where theory and action converge—which is to say, everywhere and nowhere.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div>
+          <div class="logo" style="color: white; margin-bottom: 1rem;"><img src="/img/logo.png" alt="학제가연구소 파라로고스 Logo" style="height: 30px; vertical-align: middle; margin-right: 10px; filter: brightness(0) invert(1);"></div>
+          <p style="color: var(--muted); margin-bottom: 1.5rem;">Exploring the paradox of theory and action at the edge of institutional intelligibility.</p>
+          <ul class="social-links">
+            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+            <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h3 class="footer-title">Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#members">Our Members</a></li>
+            <li><a href="#research">Research</a></li>
+            <li><a href="#programs">Academic Programs</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h3 class="footer-title">Resources</h3>
+          <ul class="footer-links">
+            <li><a href="#">Publications</a></li>
+            <li><a href="#">Proceedings Journal</a></li>
+            <li><a href="#">Research Papers</a></li>
+            <li><a href="#">Media Archive</a></li>
+            <li><a href="#">Terminology Guide</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="copyright">
+        <p>© 2025 학제가연구소 파라로고스(Institute for Para-disciplinary Studies παράλογος) - All Rights Reserved (and lefts)</p>
+        <p style="margin-top: 0.5rem;">Email: <a href="mailto:palimpsestology@gmail.com" style="color: var(--muted);">palimpsestology@gmail.com</a></p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

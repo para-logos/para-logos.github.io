@@ -1,0 +1,164 @@
+body {
+  margin: 0;
+  padding: 0;
+  color: #000080;
+  background-color: #000022;
+}
+
+#container {
+  width: 780px;
+  margin: 0 auto;
+  border: 5px solid #800080;
+  background-color: #FFFFFF;
+  box-shadow: 0 0 15px #6600CC;
+}
+
+header {
+  background-color: #000080;
+  color: #FFFF00;
+  text-align: center;
+  padding: 10px;
+  border-bottom: 3px solid #FF00FF;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 28px;
+  text-shadow: 2px 2px #FF0000;
+}
+
+.blink {
+  animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+  50% { opacity: 0; }
+}
+
+main {
+  padding: 15px;
+  background-color: #FFFFFF;
+}
+
+section {
+  margin-bottom: 20px;
+  border: 2px dashed #00FFFF;
+  padding: 10px;
+  background-color: #FFFFCC;
+}
+
+h2 {
+  color: #FF0000;
+  border-bottom: 2px groove #00FF00;
+  font-size: 18px;
+  margin-top: 5px;
+}
+
+ul {
+  list-style-image: url("data:image/gif;base64,R0lGODlhDAAMAKIAAP////8zM/8AAP8zAACZAAAAAAAAAAAAACH5BAAAAAAALAAAAAAMAAwAAAMpGLrc/jDKOQsRYOgsvNc5CQSwBIaYOZInmYrhujKtGZrwHNPUbef6zvf+AQA7");
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+a {
+  color: #0000FF;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #FF00FF;
+  text-decoration: underline;
+}
+
+a:visited {
+  color: #800080;
+}
+
+.marquee {
+  background-color: #000000;
+  color: #00FF00;
+  padding: 5px;
+  margin-top: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.marquee span {
+  display: inline-block;
+  padding-left: 100%;
+  animation: marquee 15s linear infinite;
+}
+
+@keyframes marquee {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(-100%, 0); }
+}
+
+footer {
+  background-color: #000080;
+  color: #FFFFFF;
+  text-align: center;
+  padding: 10px;
+  border-top: 3px solid #FF00FF;
+  font-size: 12px;
+}
+
+.hit-counter {
+  text-align: center;
+  margin-top: 10px;
+  font-weight: bold;
+  color: #FF0000;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 2px solid #000080;
+}
+
+th, td {
+  border: 1px solid #000080;
+  padding: 5px;
+  text-align: left;
+}
+
+th {
+  background-color: #CCCCFF;
+}
+
+.center {
+  text-align: center;
+}
+
+img {
+  border: none;
+}
+
+#about img {
+  border: none;
+  background: transparent;
+}
+
+.palimpsest-text {
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px dotted #800080;
+  background-color: #F8F8FF;
+  font-size: 14px;
+}
+
+.palimpsest-text h3 {
+  color: #800080;
+  text-align: center;
+  font-size: 16px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  text-decoration: underline;
+}
+
+.palimpsest-text p {
+  margin-bottom: 10px;
+  text-align: justify;
+}

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Para-Institute for Theoretical Action Research (PITAR)</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* Star background animation */
+    .star {
+      position: fixed;
+      width: 2px;
+      height: 2px;
+      background-color: white;
+      border-radius: 50%;
+      opacity: 0;
+      z-index: -1;
+      animation: twinkle 3s ease-in-out infinite;
+    }
+    
+    @keyframes twinkle {
+      0% { opacity: 0; }
+      50% { opacity: 1; }
+      100% { opacity: 0; }
+    }
+    
+    /* Background color animation */
+    @keyframes spaceBackground {
+      0% { background-color: #000022; }
+      33% { background-color: #000033; }
+      66% { background-color: #000044; }
+      100% { background-color: #000022; }
+    }
+    
+    body {
+      animation: spaceBackground 30s infinite;
+    }
+    
+    /* Container glow effect */
+    @keyframes glow {
+      0% { box-shadow: 0 0 15px #6600CC; }
+      50% { box-shadow: 0 0 25px #9966FF; }
+      100% { box-shadow: 0 0 15px #6600CC; }
+    }
+    
+    #container {
+      animation: glow 5s infinite;
+    }
+  </style>
+  <!-- device detection -->
+  <script>
+    window.onload = function() {
+      // stars
+      for (let i = 0; i < 150; i++) {
+        const star = document.createElement('div');
+        star.className = 'star';
+        star.style.left = Math.random() * 100 + '%';
+        star.style.top = Math.random() * 100 + '%';
+        const size = Math.random() * 2 + 1;
+        star.style.width = size + 'px';
+        star.style.height = size + 'px';
+        star.style.animationDelay = Math.random() * 3 + 's';
+        document.body.appendChild(star);
+      }
+      
+      // mobile detection
+      function isMobile() {
+        return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth <= 768;
+      }
+      
+      // fonts
+      if (isMobile()) {
+        document.body.style.fontFamily = "'Comic Neue', cursive";
+        const styleElement = document.createElement('style');
+        styleElement.textContent = "* { font-family: 'Comic Neue', cursive !important; }";
+        document.head.appendChild(styleElement);
+      } else {
+        document.body.style.fontFamily = "'Comic Sans MS', 'Comic Sans', cursive";
+        const styleElement = document.createElement('style');
+        styleElement.textContent = "* { font-family: 'Comic Sans MS', 'Comic Sans', cursive !important; }";
+        document.head.appendChild(styleElement);
+      }
+    };
+  </script>
+</head>
+<body>
+  <div id="container">
+    <header>
+      <h1><span class="blink">★</span> Para-Institute for Theoretical Action Research (PITAR) <span class="blink">★</span></h1>
+      <p><i>Under Construction - Best viewed in Netscape Navigator 4.0 or Internet Explorer 5.0</i></p>
+    </header>
+    
+    <main>
+      <section id="about">
+        <h2>:: About ::</h2>
+        <div class="center">
+          <img src="img/logo.png" alt="pitar" width="500" />
+        </div>
+        <p><strong>Para-Institute for Theoretical Action Research (PITAR)</strong> explores the paradox of theory and action at the edge of institutional intelligibility.</p>
+        <p class="center"><font color="#FF0000" size="+1">* Theory simulates action. Action impersonates theory. *</font></p>
+        
+        <div class="palimpsest-text">
+          <h3>Welcome to PITAR</h3>
+          <p>The Para-Institute for Theoretical Action Research (PITAR) is an experimental platform dedicated to exploring the threshold between theory and practice, institution and escape, presence and ghost. Inspired by action research yet fundamentally subversive of it, PITAR questions the structures that determine how knowledge is produced, enacted, and legitimized.</p>
+      
+          <h3>Our Premise</h3>
+          <p>At PITAR, we believe that action does not always require intervention, and theory does not always live in abstraction. Instead, we focus on the recursive process in which action produces theory, and theory suspends action. This paradox is not a problem to be solved, but a methodology to be inhabited.</p>
+      
+          <h3>What We Do</h3>
+          <ul>
+            <li>Performative simulations of research-based interventions</li>
+            <li>Experimental approaches to meta-action methodologies</li>
+            <li>Construction of fictional institutions, researchers, and artifacts</li>
+            <li>Disassembly and repurposing of theoretical apparatuses</li>
+            <li>Production of texts and practices that resemble research—but aren’t (or are)</li>
+          </ul>
+      
+          <h3>Who This Is For</h3>
+          <p>PITAR is a space for scholars, artists, thinkers, and experimental practitioners who wish to:</p>
+          <ul>
+            <li>Blur the line between theory and practice</li>
+            <li>Engage in research that critiques its own form</li>
+            <li>Pursue existential legitimacy rather than institutional recognition</li>
+            <li>Write what must be written, even if unread</li>
+          </ul>
+      
+          <p><em>PITAR offers no conclusions—only the possibility that every question can be enacted.</em></p>
+        </div>
+      </section>
+      
+      <section id="member">
+        <h2>:: Member ::</h2>
+        <ul>
+          <li>docteur Faustroll (Professor Emeritus) from <a href="https://www.college-de-pataphysique.fr/" target="_blank">Collège de 'Pataphysique</a></li>
+          <li><font color="#FF0000">[Redacted]</font></li>
+        </ul>
+      </section>
+      
+      <section id="research">
+        <h2>:: Research ::</h2>
+        <ul>
+          <li>Our institute publishes the academic journal "<i>Proceedings of the Para-Institute for Theoretical Action Research</i>" which features cutting-edge research in the field.</li>
+          <li>Currently preparing to publish a book.
+            <ul>
+              <li>(Working title) <i>Modern Magico-Religious Practices and Their Meaning</i></li>
+            </ul>
+          </li>
+          <li>Recent Research Papers:
+            <ul>
+              <li>Published in <i>Proceedings of the Para-Institute for Theoretical Action Research</i>:
+                <ul>
+                  <li><a href="pdf/Towards_an_Asemic_Palimpsest.pdf">Towards an Asemic Palimpsest: The Manifold Layers of Traced Oblivion</a></li>
+                  <li><a href="pdf/Palimpsestic_Ontology.pdf">Palimpsestic Ontology: Theoretical Foundations of Layered Reality</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+      
+      <section id="education">
+        <h2>:: Academic Programs ::</h2>
+        <ul>
+          <li>The Institute offers innovative educational pathways that challenge traditional academic boundaries:
+            <ul>
+              <li>Degree Programs:
+                <ul>
+                  <li><strong>Free-Associate Degree</strong>: This pioneering program empowers students to establish their own fields of study not formally recognized by conventional universities. By achieving specified outcomes in their self-designed majors, students can receive academic recognition for exploring uncharted intellectual territories. This approach is ideal for those interested in emergent fields that exist between established disciplines or in cultural phenomena that deserve scholarly attention but have not yet been formalized.</li>
+                  <li><strong>Dissociate Degree</strong>: This unique program celebrates the pataphysical tradition of creative disruption through academic mimicry. Students develop plausible yet deliberately unconventional theoretical frameworks, engaging in playful philosophy that challenges established systems of thought. This degree recognizes the value of constructive confusion as a tool for intellectual growth and disciplinary innovation.</li>
+                </ul>
+              </li>
+              <li>The following majors are being planned:
+                <table>
+                  <tr>
+                    <th>Program</th>
+                    <th>Status</th>
+                  </tr>
+                  <tr>
+                    <td><font color="#800080">*[Redacted]</font></td>
+                    <td>Coming Soon!</td>
+                  </tr>
+                  <tr>
+                    <td><font color="#800080">*[Redacted]</font></td>
+                    <td>Coming Soon!</td>
+                  </tr>
+                </table>
+              </li>
+              <li><a href="pdf/diploma_example.pdf" target="_blank"><img src="data:image/gif;base64,R0lGODlhEAAQAIAAAP///wAAACH5BAAAAAAALAAAAAAQABAAAAIOhI+py+0Po5y02ouzPgUAOw==" alt="PDF" /> View Sample Diploma</a> <font color="#FF0000">(New!)</font></li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+      
+      <section id="contact">
+        <h2>:: Contact ::</h2>
+        <ul>
+          <li>You can contact us via the following email:
+            <ul>
+              <li><img src="data:image/gif;base64,R0lGODlhEAAQAIAAAP///wAAACH5BAAAAAAALAAAAAAQABAAAAIOhI+py+0Po5y02ouzPgUAOw==" alt="email" /> <a href="mailto:palimpsestology@gmail.com">palimpsestology@gmail.com</a></li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+      
+      <div class="marquee">
+        <span>Welcome to the Para-Institute for Theoretical Action Research! Theory simulates action! Action impersonates theory! Thank you for visiting our website! We are NOT currently accepting applications for our free-associative degree programs! &nbsp;&nbsp;&nbsp;&nbsp;</span>
+      </div>
+      
+      <div class="hit-counter">
+        Visitors: 00001337
+      </div>
+    </main>
+    
+    <footer>
+      <p>© 1998 Para-Institute for Theoretical Action Research (PITAR) - All Rights Reserved</p>
+      <p><img src="data:image/gif;base64,R0lGODlhEgASAIAAAP///wAAACH5BAAAAAAALAAAAAASABIAAAIdjI+py+0Po5y02ouz3rz7D4biSJbmiabqyrbuC0cFADs=" alt="e-mail" /> <a href="mailto:palimpsestology@gmail.com">palimpsestology@gmail.com</a></p>
+    </footer>
+  </div>
+</body>
+</html>

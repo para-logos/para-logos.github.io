@@ -176,18 +176,24 @@
     }
     
     .palimpsest-text {
-      background-color: white;
-      border-radius: 8px;
-      padding: 2rem;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-      margin-bottom: 2rem;
+      background-color: #ffffff;
+      border-radius: 12px;
+      padding: 2.5rem;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+      margin-bottom: 3rem;
+      transition: box-shadow 0.3s ease;
+    }
+    
+    .palimpsest-text:hover {
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
     }
     
     .palimpsest-text h3 {
       font-family: 'Playfair Display', serif;
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
+      font-size: 1.75rem;
+      margin-bottom: 1.5rem;
       color: var(--primary);
+      position: relative;
     }
     
     .grid {
@@ -482,10 +488,37 @@
       color: var(--accent);
     }
 
-    .premise-list p {
-      margin-top: 0.5em;
-      margin-left: 1.5em;
-      text-indent: 1.5em;
+    .premise-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 2rem 0;
+      counter-reset: premise-counter;
+    }
+    
+    .premise-list .list-group-item {
+      padding: 1.5rem 0;
+      border-bottom: 1px solid var(--border);
+      position: relative;
+    }
+    
+    .premise-list .list-group-item:last-child {
+      border-bottom: none;
+    }
+    
+    .premise-list .list-group-item strong {
+      display: block;
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 0.75rem;
+    }
+    
+    .premise-list .list-group-item p {
+      color: var(--secondary);
+      font-size: 1rem;
+      line-height: 1.75;
+      margin-left: 0.5rem;
+      text-indent: 1.5rem;
     }
 
     .responsive-img {
@@ -542,35 +575,39 @@
           <li class="list-group-item">
             <strong>우리는 ‘학문’이 시작되는 경계에 주목한다.</strong>
             <p>
-              ‘학제간(interdisciplinary)’이 기존 학문들의 통합을 전제로 한다면, ‘학제가(para-disciplinary)’는 그 학문들 <strong>바깥에서</strong>, 혹은 <strong>곁에서</strong>, <strong>이미-학문이기를 거부하거나 아직-학문이 되지 않은 사유</strong>를 실험한다. 우리는 이 ‘곁(para)’의 자리를 사유의 출발점으로 삼는다.
+              ‘학제간(interdisciplinary)’이 기존 학문들의 통합을 전제로 한다면, ‘학제가(para-disciplinary)’는 그 학문들 <strong>바깥에서</strong>, 혹은 <strong>곁에서</strong>, <strong>이미-학문이기를 거부하거나 아직-학문이 되지 않은 사유</strong>를 실험한다.
+              우리는 이 ‘곁(para)’의 자리를 사유의 출발점으로 삼는다.
             </p>
           </li>
           <li class="list-group-item">
             <strong>우리는 제도적 정당화 대신 ‘패러로지(paralogy)’를 따른다.</strong>
             <p>
-              Jean-François Lyotard가 말한 것처럼, 지식은 더 이상 하나의 통일된 메타서사나 효율성(performativity)에 의해 정당화되지 않는다.<br>
-              우리는 <strong>이성(logos)</strong>이 아닌 <strong>비이성(παράλογος, paralogos)</strong>의 자장에서, 정당화가 아닌 <strong>비동조, 실험, 교란</strong>을 통해 새로운 언어 게임을 생성한다.
+              Jean-François Lyotard에 따르면, 지식은 더 이상 통일된 메타서사나 효율성(performativity)에 의해 정당화되지 않는다.
+              우리는 <strong>이성(logos)</strong>이 아닌 <strong>비이성(παράλογος, paralogos)</strong>의 자장에서,
+              정당화가 아닌 <strong>비동조, 실험, 교란</strong>을 통해 새로운 언어 게임을 생성한다.
             </p>
           </li>
           <li class="list-group-item">
             <strong>우리는 불완전성과 불일치의 상태를 긍정한다.</strong>
             <p>
-              완결된 이론보다 <strong>열린 가능성</strong>, 정합성보다 <strong>균열</strong>, 중심보다 <strong>주변</strong>에서 의미를 찾는다.<br>
-              지식은 누적되는 것이 아니라, 때로 <strong>잊히고 무너질 때 새로운 형태로 발화</strong>된다.<br>
+              완결된 이론보다 <strong>열린 가능성</strong>, 정합성보다 <strong>균열</strong>, 중심보다 <strong>주변</strong>에서 의미를 찾는다.
+              지식은 누적되기보다 때로 <strong>잊히고 무너질 때 새로운 형태로 발화</strong>된다.
               우리는 이 발화를 <strong>고의적 오류, 비정형적 조합, 위법한 인용</strong>의 방식으로 수행한다.
             </p>
           </li>
           <li class="list-group-item">
             <strong>우리는 다양한 ‘비-학문’을 학문적으로 다룬다.</strong>
             <p>
-              패러문학(paraliterature), 패러심리학(parapsychology), 패러인류학(paranthropology), 패러종교연구(para-religious studies) 등, <strong>제도권 학문에서 배제되었거나 경계에 머무는 담론들</strong>은 이 연구소의 핵심 관심사이다.<br>
+              패러문학(paraliterature), 패러심리학(parapsychology), 패러인류학(paranthropology), 패러종교연구(para-religious studies) 등
+              <strong>제도권 학문에서 배제되었거나 경계에 머무는 담론들</strong>은 이 연구소의 핵심 관심사이다.
               이는 단지 주제를 다르게 하는 것이 아니라, <strong>사유하는 방식 자체를 전복하는 일</strong>이다.
             </p>
           </li>
           <li class="list-group-item">
             <strong>우리는 ‘되지 않음’의 상태를 지속적으로 연기한다.</strong>
             <p>
-              우리는 무엇이 되기를 주장하지 않는다. 오히려 <strong>되지 않음(becoming-not)</strong>의 상태에서, <strong>미끄러지고 틀어지고 흩어지는 사유</strong>를 추구한다.<br>
+              우리는 무엇이 되기를 주장하지 않는다.
+              오히려 <strong>되지 않음(becoming-not)</strong>의 상태에서, <strong>미끄러지고 틀어지고 흩어지는 사유</strong>를 추구한다.
               "학제가"는 곧 "학제의 가장자리"이다. 이곳은 <strong>진짜인 척하지 않는 연구소</strong>이다.
             </p>
           </li>
